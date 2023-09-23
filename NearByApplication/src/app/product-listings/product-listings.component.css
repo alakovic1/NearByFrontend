@@ -1,0 +1,51 @@
+/* Style for the product listings table */
+table {
+    width: 700px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: white;
+  }
+  
+  /* Header row */
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Alternating row colors */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Image size class */
+  .small-image {
+    max-width: 100px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+  }
+  
+  /* Center the table */
+  table {
+    margin: 0 auto;
+  }
+  
+  /* Center the text in cells */
+  th, td {
+    text-align: center;
+  }
+
+  .dropdown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
