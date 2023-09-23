@@ -21,7 +21,6 @@ export class CategoryService {
   }
 
   getSelectedCategory(): number | null {
-    console.log('GOGI', this.selectedCategorySubject.value)
     return this.selectedCategorySubject.value;
   }
 }
