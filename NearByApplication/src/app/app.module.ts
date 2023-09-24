@@ -8,19 +8,26 @@ import { ProductListingsComponent } from './product-listings/product-listings.co
 import { HttpClientModule } from '@angular/common/http';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListingsComponent,
-    DropdownMenuComponent
+    DropdownMenuComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

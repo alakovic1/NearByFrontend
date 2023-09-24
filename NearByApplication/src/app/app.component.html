@@ -1,12 +1,15 @@
 <div class="toolbar" role="banner">
+  <div class="name">
   <img
     width="40"
+    height="40"
     alt="Angular Logo"
     src="/assets/img/icon.png"
   />
-  <span style="font-weight: bold; font-size: large;">Near By Online Marketplace</span>
-    <div class="spacer"></div>
-    <button type="button" class="button">Log In</button>
+  <span style="font-weight: bold; font-size: large; width: 300px;">Near By Online Marketplace</span>
+   <button mat-button (click)="openModal()" class="mapButton">Find by map</button>
+   </div>
+   <button type="button" class="button">Log In</button>
 </div>
 
 <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">

@@ -36,6 +36,7 @@
     background-color: #1976d2;
     color: white;
     font-weight: 2000;
+    justify-content: space-between;
   }
 
   .toolbar img {
@@ -276,5 +277,34 @@
   .button:hover {
     background-color: gray; 
     color: white;
+  }
+
+  .mapButton {
+    background-color: rgba(217, 209, 209, 0.939);
+    color: black;
+    border: 2px solid black; 
+    margin-right: 3%;
+    padding: 10px 40px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    max-height: 40px;
+    padding: 0 10 0 10;
+    max-width: 165px;
+    width: 100%;
+  }
+
+  .mapbButton:hover {
+    background-color: gray; 
+    color: white;
+  }
+
+  .name{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
   }
  
