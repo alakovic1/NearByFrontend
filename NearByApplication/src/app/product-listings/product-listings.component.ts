@@ -4,6 +4,7 @@ import { CategoryService } from '../services/category.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductModalComponent } from '../product-modal/product-modal.component';
 import { ProductService } from '../services/product.service';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-product-listings',
@@ -18,13 +19,19 @@ export class ProductListingsComponent implements OnInit {
 
   constructor(private http: HttpClient,
     private categoryService: CategoryService,
-    private dialog: MatDialog, private productService: ProductService) { }
+    private dialog: MatDialog, private productService: ProductService,  private sharedService: SharedService ) { }
 
   ngOnInit(): void {
     this.loadProducts(); 
     this.categoryService.selectedCategory$.subscribe(categoryId => {
       this.loadProducts(); 
     });
+  
+  this.sharedService.getSharedData().subscribe(data => {
+    if (data) {
+      this.propertyData = data;
+    }
+  });
   }
   
   loadProducts() {

@@ -1,7 +1,12 @@
 <div class="modal-overlay">
-<div class="modal-content">
-<h2>Geolocation</h2>
-<p>This is the content of the modal.</p>
-<button mat-button (click)="closeModal()">Close</button>
-</div>
-</div>
+    <div class="modal-content">
+      <h2>Geolocation</h2>
+      <div style="margin-bottom: 5px;">
+        <app-dropdown-menu [flagValue]="false" (categoryChangedData)="selectedCategory = $event"></app-dropdown-menu>
+      </div>
+      <app-map (coordinatesChanged)="latitude = $event[0]; longitude = $event[1]"></app-map>
+      <button mat-button (click)="closeModal()" style="margin-top: 5px;">Close</button>
+      <button mat-button (click)="submitData()" style="margin-top: 5px;">Submit</button>
+    </div>
+  </div>
+  

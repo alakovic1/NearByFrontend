@@ -1,5 +1,5 @@
 <div class="filter">
-    <button class="clearButton" type="button" (click)="resetDropdown()"><img class="xImage" src="../../assets/img/x.png" /></button>
+    <button class="clearButton" type="button" (click)="resetDropdown()" *ngIf="flagValue"><img class="xImage" src="../../assets/img/x.png"  /></button>
     <select class="drop" id="categoryDropdown" [(ngModel)]="selectedCategory" (change)="categoryChanged()">
       <option value="" selected disabled>Select Category</option>
       <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>

@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { ProductModalComponent } from './product-modal/product-modal.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProductModalComponent } from './product-modal/product-modal.component';
     DropdownMenuComponent,
     ModalComponent,
     LoginModalComponent,
-    ProductModalComponent
+    ProductModalComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
