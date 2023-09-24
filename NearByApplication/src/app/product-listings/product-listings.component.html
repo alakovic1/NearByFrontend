@@ -11,7 +11,7 @@
     <th>Price</th>
     <th>Image</th>
   </tr>
-  <tr *ngFor="let property of propertyData">
+  <tr *ngFor="let property of propertyData" (click)="openProductModal(property.id)">
     <td>{{ property.name }}</td>
     <td>{{ property.description }}</td>
     <td [style.color]="property.forSale ? '#F0001A' : 'black'" [style.font-weight]="property.forSale ? 'bold' : 'normal'">{{ property.price }}</td>

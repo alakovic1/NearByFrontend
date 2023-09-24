@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CategoryService } from '../services/category.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductModalComponent } from '../product-modal/product-modal.component';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-listings',
@@ -14,7 +17,8 @@ export class ProductListingsComponent implements OnInit {
   totalPages = 0;
 
   constructor(private http: HttpClient,
-    private categoryService: CategoryService) { }
+    private categoryService: CategoryService,
+    private dialog: MatDialog, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.loadProducts(); 
@@ -47,6 +51,15 @@ export class ProductListingsComponent implements OnInit {
       this.currentPage--;
       this.loadProducts();
     }
+  }
+
+  async openProductModal(productId: number) {
+   this.productService.getProductById(productId).subscribe((data) => {
+    this.dialog.open(ProductModalComponent, {
+      data: data,
+  });
+   })
+   
   }
 
 }

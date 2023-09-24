@@ -1,0 +1,18 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <img class="xImage" src="../../assets/img/x.png" (click)="closeProductModal()"/>
+    <img [src]="'http://localhost:8080/product/image/' + data.image"  alt="Product Image" class="image">
+    <div class="titleDiv">
+    <h2 style="padding-top: 8px;">{{ data.name }}</h2>
+    <div class="viewsDiv">
+      <img class="viewsImage" src="../../assets/img/show.png"/>
+      <p style="margin-left: 5px; margin-top: 13px;">{{ data.views }}</p>
+    </div>
+  </div>
+  <div class="descriptionDiv">
+    <p>{{ data.description }}</p>
+    <p [style.color]="data.forSale ? '#F0001A' : 'black'" [style.font-weight]="data.forSale ? 'bold' : 'normal'" style="font-size: 25px;">{{ data.price }} KM</p>
+  </div>
+  </div>
+</div>
+  

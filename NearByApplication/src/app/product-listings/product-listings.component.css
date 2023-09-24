@@ -1,4 +1,3 @@
-/* Style for the product listings table */
 table {
     width: 700px;
     border-collapse: collapse;
@@ -13,18 +12,15 @@ table {
     background-color: white;
   }
   
-  /* Header row */
   th {
     background-color: #f2f2f2;
     font-weight: bold;
   }
   
-  /* Alternating row colors */
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
   
-  /* Image size class */
   .small-image {
     max-width: 100px;
     max-height: 80px;
@@ -32,12 +28,10 @@ table {
     height: auto;
   }
   
-  /* Center the table */
   table {
     margin: 0 auto;
   }
   
-  /* Center the text in cells */
   th, td {
     text-align: center;
   }
