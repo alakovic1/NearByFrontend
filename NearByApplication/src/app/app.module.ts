@@ -13,13 +13,15 @@ import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListingsComponent,
     DropdownMenuComponent,
-    ModalComponent
+    ModalComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
