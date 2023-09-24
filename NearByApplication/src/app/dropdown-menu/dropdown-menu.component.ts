@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CategoryService } from '../services/category.service';
+import { Category } from 'src/types/category.type';
 
 @Component({
   selector: 'app-dropdown-menu',
@@ -9,7 +10,7 @@ import { CategoryService } from '../services/category.service';
 export class DropdownMenuComponent implements OnInit {
   @Output() categoryChangedData = new EventEmitter<string>() ;
   @Input() flagValue: boolean = false;
-  categories: any[] = [];
+  categories: Category[] = [];
   selectedCategory: any | null = '';
   
   constructor(private categoryService: CategoryService) {}

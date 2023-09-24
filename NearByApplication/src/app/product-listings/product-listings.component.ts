@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductModalComponent } from '../product-modal/product-modal.component';
 import { ProductService } from '../services/product.service';
 import { SharedService } from '../services/shared.service';
+import { Product } from 'src/types/product.type';
 
 @Component({
   selector: 'app-product-listings',
@@ -12,7 +13,7 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./product-listings.component.css']
 })
 export class ProductListingsComponent implements OnInit {
-  propertyData: any[] = [];
+  propertyData: Product[] = [];
   currentPage = 0;
   pageSize = 2; //for testing 
   totalPages = 0;
@@ -40,7 +41,7 @@ export class ProductListingsComponent implements OnInit {
       ? `http://localhost:8080/product/byCategoryId/${selectedCategory}/${this.currentPage}/${this.pageSize}`
       : `http://localhost:8080/product/all/${this.currentPage}/${this.pageSize}`;
 
-    this.http.get<any[]>(url).subscribe((data: any) => {
+    this.http.get<{content: Product[],totalPages: number }>(url).subscribe((data: {content: Product[],totalPages: number }) => {
       this.propertyData = data.content;
       this.totalPages = data.totalPages
     });
