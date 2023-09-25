@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { Category } from 'src/types/category.type';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-dropdown-menu',
@@ -13,7 +14,8 @@ export class DropdownMenuComponent implements OnInit {
   categories: Category[] = [];
   selectedCategory: any | null = '';
   
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService,
+    private sharedService : SharedService) {}
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe(data => {
@@ -28,10 +30,14 @@ export class DropdownMenuComponent implements OnInit {
         dropdown.value = '';
         this.categoryService.setSelectedCategory(this.selectedCategory);
     }
+    this.sharedService.setMainListFlag(true);
+    this.sharedService.setCurrentPage(0);
   }
   categoryChanged() {  
     if (this.selectedCategory !== null && this.flagValue) {
       this.categoryService.setSelectedCategory(this.selectedCategory);
+      this.sharedService.setMainListFlag(true);
+      this.sharedService.setCurrentPage(0);
     } else {
       this.categoryChangedData.emit(this.selectedCategory);
     }

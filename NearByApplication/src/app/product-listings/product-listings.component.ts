@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CategoryService } from '../services/category.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,6 +13,9 @@ import { Product } from 'src/types/product.type';
   styleUrls: ['./product-listings.component.css']
 })
 export class ProductListingsComponent implements OnInit {
+
+  @Input() mainList: boolean = true;
+
   propertyData: Product[] = [];
   currentPage = 0;
   pageSize = 2; //for testing 
@@ -23,6 +26,7 @@ export class ProductListingsComponent implements OnInit {
     private dialog: MatDialog, private productService: ProductService,  private sharedService: SharedService ) { }
 
   ngOnInit(): void {
+    this.currentPage = this.sharedService.getCurrentPage();
     this.loadProducts(); 
     this.categoryService.selectedCategory$.subscribe(categoryId => {
       this.loadProducts(); 
@@ -48,16 +52,28 @@ export class ProductListingsComponent implements OnInit {
   }
 
   nextPage() {
-    if (this.currentPage < this.totalPages - 1) {
+    if (this.sharedService.getCurrentPage() < this.totalPages - 1) {
       this.currentPage++;
-      this.loadProducts();
+      this.sharedService.setCurrentPage(this.currentPage);
+      if(this.sharedService.getMainListFlag()){
+        this.loadProducts();
+      }
+      else {
+        this.sharedService.callApiService();
+      }
     }
   }
 
   previousPage() {
-    if (this.currentPage > 0) {
+    if (this.sharedService.getCurrentPage() > 0) {
       this.currentPage--;
-      this.loadProducts();
+      this.sharedService.setCurrentPage(this.currentPage);
+      if(this.sharedService.getMainListFlag()){
+        this.loadProducts();
+      }
+      else {
+        this.sharedService.callApiService();
+      }
     }
   }
 

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ModalService } from '../services/modal.service';
-import { ApiService } from '../services/api.service';
 import { SharedService } from '../services/shared.service';
 
 @Component({
@@ -14,7 +13,6 @@ export class ModalComponent {
   selectedCategory: string | undefined;
   constructor(
     private modalService: ModalService,
-    private apiService: ApiService,
     private sharedService: SharedService 
   ) {}
 
@@ -24,12 +22,17 @@ export class ModalComponent {
 
   submitData(): void {
     console.log(this.latitude, this.longitude, this.selectedCategory)
+    this.sharedService.setLatitude(this.latitude);
+    this.sharedService.setLongitude(this.longitude);
+    this.sharedService.setSelectedCategory(this.selectedCategory)
+    //this.sharedService.setCurrentPage(0);
     if (this.latitude !== undefined && this.longitude !== undefined) {
-      this.apiService.sendCoordinatesAndCategoryId(this.latitude, this.longitude, this.selectedCategory)
+      this.sharedService.sendCoordinatesAndCategoryId(this.latitude, this.longitude, this.selectedCategory)
         .subscribe(response => {
           this.sharedService.setSharedData(response.content); 
           this.modalService.closeModal()
         });
+        this.sharedService.setMainListFlag(false);
     }
   }
 }
