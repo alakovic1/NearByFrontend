@@ -69,7 +69,7 @@ illustrated in next screenshot:
   <img src="images/productDisplay.png" width="600" />
 </p>
 
-In this view, the views value (eye icon) is important: it represents how many times a product has been
+In this screenshot, the view icon is important: it represents how many times a product has been
 viewed. With each click on a product, this value increases. Also, if an item is on SALE, its price is
 displayed in red, as shown in the screenshot.
 
