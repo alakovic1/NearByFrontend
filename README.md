@@ -16,6 +16,7 @@ Implementation is done in Angular 16.
 * **assets:** image folder
 * **types:** folder containing all created types from the database to avoid using any
 
+## Modules
 The system contains several modules:
 * login
 * home page
@@ -25,7 +26,7 @@ The system contains several modules:
 
 ### Login
 
-Login popup has requires basic information to access the app with a user.
+Login requires users credentials to access the app.
 
 <p align="center">
   <img src="images/login.png" width="300" />
