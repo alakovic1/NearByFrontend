@@ -4,7 +4,7 @@ This project represents frontend code for “Near By” application, an online m
 company that will allow users to easily find products close by. 
 Implementation is done in Angular 16.
 
-##Project structure
+## Project structure
 * **dropdown-menu:** component created for the category dropdown list
 * **login-modal:** component created for login
 * **map:** component created for the map only
