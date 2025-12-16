@@ -30,3 +30,6 @@ dataset is large, with lots of data; to avoid returning and displaying all data 
 required. In this case, it is set to display two products per page (for representation). In an ideal case, it
 would be 10.
 
+<p align="center">
+  <img src="images/homepage.png" width="800" />
+</p>
