@@ -23,7 +23,7 @@ The system contains several modules:
 * product display
 * filtering by location
 
-## Login
+### Login
 
 Login popup has requires basic information to access the app with a user.
 
@@ -31,7 +31,7 @@ Login popup has requires basic information to access the app with a user.
   <img src="images/login.png" width="300" />
 </p>
 
-## Home page
+### Home page
 
 On this page, all products from the database are displayed. Pagination was implemented because the
 dataset is large, with lots of data; to avoid returning and displaying all data at once, pagination was
@@ -42,7 +42,7 @@ would be 10.
   <img src="images/homepage.png" width="800" />
 </p>
 
-## Display all categories
+### Display all categories
 
 Categories are displayed in a dropdown list:
 
@@ -50,7 +50,7 @@ Categories are displayed in a dropdown list:
   <img src="images/displayOfCategories.png" width="300" />
 </p>
 
-## Filtering by categories
+### Filtering by categories
 
 Filtering by the selected categories from the list was successfully implemented. The screenshot shows filtering by a category (in this case there are only two products).
 
@@ -60,7 +60,7 @@ Filtering by the selected categories from the list was successfully implemented.
 
 By clicking the X icon next to the categories, the category filter is cleared.
 
-## Product display
+### Product display
 
 Each row in the product table can be clicked. When a product is clicked, product information is shown as
 illustrated in next screenshot:
@@ -77,7 +77,7 @@ displayed in red, as shown in the screenshot.
   <img src="images/productDisplay2.png" width="400" />
 </p>
 
-## Filtering by location
+### Filtering by location
 
 On the home page, in the toolbar at the top, there is a “Find by map” button. Clicking it opens a new
 modal where a world map and a category dropdown are displayed.
@@ -106,7 +106,7 @@ category dropdown exists in this modal as well.
   <img src="images/locationFiltering3.png" width="600" />
 </p>
 
-## Possible improvements
+### Possible improvements
 
 **Regarding UI and functionalities:** The next step after login would be to add buttons for adding, editing, and deleting products and categories.
 Those routes can only be executed by a logged-in user (some by admin, some by user). In addition,
