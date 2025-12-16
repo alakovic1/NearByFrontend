@@ -26,7 +26,7 @@ The system contains several modules:
 
 ### Login
 
-Login requires users credentials to access the app.
+Login requires user credentials to access the app.
 
 <p align="center">
   <img src="images/login.png" width="300" />
@@ -34,9 +34,8 @@ Login requires users credentials to access the app.
 
 ### Home page
 
-On this page, all products from the database are displayed. Pagination was implemented because the
-dataset is large, with lots of data; to avoid returning and displaying all data at once, pagination was
-required. In this case, it is set to display two products per page (for representation). In an ideal case, it
+On this page, all products from the database are displayed. Pagination was implemented because of the possibility to have large dataset. 
+In this case, it is set to display two products per page (for representation). In an ideal case, it
 would be 10.
 
 <p align="center">
